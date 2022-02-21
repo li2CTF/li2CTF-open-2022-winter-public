@@ -1,0 +1,3 @@
+# Hints
+## Something's behind rock!
+If only we could remove this annoying stone...

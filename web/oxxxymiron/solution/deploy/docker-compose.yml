@@ -1,0 +1,12 @@
+version: '2.3'
+
+services:
+  oxxxymiron:
+    build: service
+    restart: on-failure
+    ports:
+      - "21014:80"
+    pids_limit: 512
+    mem_limit: 128M
+    privileged: true
+    container_name: 'oxxxymiron'

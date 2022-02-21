@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  electrot:
+    build: service
+    restart: on-failure
+    ports:
+      - "21015:80"
+    privileged: true
+    links:
+      - psql
+  psql:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "polvodb"
+      POSTGRES_USER: "polvouser"
+      POSTGRES_PASSWORD: "polvo228"
+    ports:
+      - "5432:5432"

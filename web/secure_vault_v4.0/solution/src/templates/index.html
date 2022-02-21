@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="p-3 mb-2 bg-secondary text-white column justify-content-center", style="width:25%">
+    <form action="" method="post" class="justify-content-center" id="login-form" onsubmit="return validateForm();">
+        <p>
+            {{ form.username.label(class="form-check-label", style="align:center") }}
+            <br>
+            {{ form.username(type="text", id="form-username") }}
+        </p>
+        <p>
+            {{ form.password.label(class="form-check-label", style="align:center") }}
+            <br>
+            {{ form.password(type="password", id="form-password") }}
+        </p>
+        <p>
+            {{ form.submit(type="submit", class="btn btn-danger", id="form-button") }}
+        </p>
+    </form>
+</div>
+<script src="/static/login.js"></script>
+{% endblock %}

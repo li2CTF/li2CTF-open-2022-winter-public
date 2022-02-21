@@ -1,0 +1,3 @@
+# Hints
+## Read form handler carefully
+Probably optimisations were too rapid...

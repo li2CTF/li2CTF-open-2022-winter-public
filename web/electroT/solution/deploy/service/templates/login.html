@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta charset="UTF-8">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet"/>
+    <link href="/static/core.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Register</title>
+</head>
+<body>
+<div class="centered-container">
+    <div class="nes-container with-title is-centered">
+        <p class="title nes-text is-primary">
+            <span class="arabic-text">عفيج</span>
+            Login
+            <span class="arabic-text">عفيج</span>
+        </p>
+        <form name="auth_form" method="POST" action="/login">
+            <div class="nes-field" style="margin: 1rem">
+                <label for="name_field">
+                    <span class="arabic-text">الاسم</span>
+                    Your name
+                    <span class="arabic-text">إعادته</span>
+                </label>
+                <input type="text" id="name_field" class="nes-input" name="username">
+            </div>
+            <div class="nes-field" style="margin: 1rem">
+                <label for="name_field">
+                    <span class="arabic-text">كلمة السر</span>
+                    Your password
+                    <span class="arabic-text">إعادته</span>
+                </label>
+                <input type="password" id="name_field" class="nes-input" name="password">
+            </div>
+            <div class="nes-field">
+                <label>
+                    <input type="checkbox" class="nes-checkbox" name="remember"/>
+                    <span>Remember</span>
+                </label>
+            </div>
+            <input type="submit" class="nes-btn is-primary" value="عفيجعفعفيجيج">
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <span class="nes-text is-error" style="margin-top: 2rem">
+                    {{ messages[0] }}
+                </span>
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.centered-container {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.arabic-text {
+    direction: rtl;
+    language: 'ar';
+    font-family: pixelarabicfontregular, serif;
+}
+
+.no-space {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.line {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+

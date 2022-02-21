@@ -1,0 +1,32 @@
+digraph code {
+	graph [bgcolor=azure fontsize=8 fontname="Courier" splines="ortho"];
+	node [fillcolor=gray style=filled shape=box];
+	edge [arrowhead="normal"];
+	"0x00401142" [URL="main/0x00401142", fillcolor="#c19c00",color="#c19c00", fontname="Courier",label="  ; DATA XREF from entry0 @ 0x40107d\l159: int main (int argc, char **argv, char **envp);\l; var char *s @ rbp-0x10\l; var size_t var_8h @ rbp-0x8\l; var signed int64_t var_4h @ rbp-0x4\l0x00401142      push rbp\l0x00401143      mov rbp, rsp\l0x00401146      sub rsp, 0x10\l0x0040114a      lea rax, qword [s]\l0x0040114e      mov rdi, rax                                           ; char *s\l0x00401151      mov eax, 0\l0x00401156      call sym.imp.gets                                      ; char *gets(char *s)\l0x0040115b      lea rax, qword [s]\l0x0040115f      mov rdi, rax                                           ; const char *s\l0x00401162      call sym.imp.strlen                                    ; size_t strlen(const char *s)\l0x00401167      mov dword [var_8h], eax\l0x0040116a      cmp dword [var_8h], 8\l0x0040116e      jne 0x4011b6\l"]
+	"0x00401170" [URL="main/0x00401170", fillcolor="#c19c00",color="#c19c00", fontname="Courier",label="0x00401170      mov dword [var_4h], 0\l0x00401177      jmp 0x4011a1\l"]
+	"0x00401179" [URL="main/0x00401179", fillcolor="#c19c00",color="#c19c00", fontname="Courier",label="; CODE XREF from main @ 0x4011aa\l0x00401179      mov eax, dword [var_4h]\l0x0040117c      cdqe\l0x0040117e      movzx eax, byte [rbp + rax - 0x10]\l0x00401183      movsx edx, al\l0x00401186      mov eax, dword [var_4h]\l0x00401189      add eax, 1\l0x0040118c      cdqe\l0x0040118e      movzx eax, byte [rbp + rax - 0x10]\l0x00401193      movsx eax, al\l0x00401196      sub eax, dword [var_4h]\l0x00401199      cmp edx, eax\l0x0040119b      jne 0x4011b9\l"]
+	"0x0040119d" [URL="main/0x0040119d", fillcolor="#c19c00",color="#c19c00", fontname="Courier",label="0x0040119d      add dword [var_4h], 1\l"]
+	"0x004011a1" [URL="main/0x004011a1", fillcolor="#c19c00",color="#c19c00", fontname="Courier",label="; CODE XREF from main @ 0x401177\l0x004011a1      mov eax, dword [var_8h]\l0x004011a4      sub eax, 1\l0x004011a7      cmp dword [var_4h], eax\l0x004011aa      jl 0x401179\l"]
+	"0x004011ac" [URL="main/0x004011ac", fillcolor="#c19c00",color="#c19c00", fontname="Courier",label="0x004011ac      movzx eax, byte [s]\l0x004011b0      cmp al, 0x62                                           ; 98\l0x004011b2      je 0x4011cd\l"]
+	"0x004011b4" [URL="main/0x004011b4", fillcolor="white",color="#767676", fontname="Courier",label="0x004011b4      jmp 0x4011ba\l"]
+	"0x004011b6" [URL="main/0x004011b6", fillcolor="#c19c00",color="#c19c00", fontname="Courier",label="; CODE XREF from main @ 0x40116e\l0x004011b6      nop\l0x004011b7      jmp 0x4011ba\l"]
+	"0x004011b9" [URL="main/0x004011b9", fillcolor="#c19c00",color="#c19c00", fontname="Courier",label="; CODE XREF from main @ 0x40119b\l0x004011b9      nop\l"]
+	"0x004011ba" [URL="main/0x004011ba", fillcolor="#c19c00",color="#c19c00", fontname="Courier",label="; CODE XREFS from main @ 0x4011b4, 0x4011b7\l0x004011ba      lea rdi, qword str.NO                                  ; 0x402004 ; \"NO!\\n\" ; const char *s\l0x004011c1      call sym.imp.puts                                      ; int puts(const char *s)\l0x004011c6      mov eax, 1\l0x004011cb      jmp 0x4011df\l"]
+	"0x004011cd" [URL="main/0x004011cd", fillcolor="#c19c00",color="#c19c00", fontname="Courier",label="; CODE XREF from main @ 0x4011b2\l0x004011cd      nop\l0x004011ce      lea rdi, qword str.YES                                 ; 0x402009 ; \"YES\\n\" ; const char *s\l0x004011d5      call sym.imp.puts                                      ; int puts(const char *s)\l0x004011da      mov eax, 0\l"]
+	"0x004011df" [URL="main/0x004011df", fillcolor="#c19c00",color="#c19c00", fontname="Courier",label="; CODE XREF from main @ 0x4011cb\l0x004011df      leave\l0x004011e0      ret\l"]
+        "0x00401142" -> "0x004011b6" [color="#13a10e"];
+        "0x00401142" -> "0x00401170" [color="#c50f1f"];
+        "0x00401170" -> "0x004011a1" [color="#0037da"];
+        "0x00401179" -> "0x004011b9" [color="#13a10e"];
+        "0x00401179" -> "0x0040119d" [color="#c50f1f"];
+        "0x0040119d" -> "0x004011a1" [color="#0037da"];
+        "0x004011a1" -> "0x00401179" [color="#13a10e"];
+        "0x004011a1" -> "0x004011ac" [color="#c50f1f"];
+        "0x004011ac" -> "0x004011cd" [color="#13a10e"];
+        "0x004011ac" -> "0x004011b4" [color="#c50f1f"];
+        "0x004011b4" -> "0x004011ba" [color="#0037da"];
+        "0x004011b6" -> "0x004011ba" [color="#0037da"];
+        "0x004011b9" -> "0x004011ba" [color="#0037da"];
+        "0x004011ba" -> "0x004011df" [color="#0037da"];
+        "0x004011cd" -> "0x004011df" [color="#0037da"];
+}

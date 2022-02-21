@@ -1,0 +1,12 @@
+version: '2.3'
+
+services:
+  wizzdomzz:
+    build: service
+    restart: always
+    ports:
+      - 21003:21003
+    pids_limit: 512
+    mem_limit: 128M
+    privileged: true
+    container_name: 'wizzdomzz'
